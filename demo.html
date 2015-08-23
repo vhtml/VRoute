@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>路由实现</title>
+	<style>
+	*{margin:0;padding:0;}
+	#header{
+		height: 100px;
+		line-height: 100px;
+		border-bottom: 1px solid #ddd;
+		text-align: center;
+	}
+	#main{
+		padding:20px;
+		min-height: 200px;
+	}
+	#footer{
+		height: 60px;
+		line-height: 60px;
+		background: #000;
+		text-align: center;
+		color:#fff;
+	}
+	#nav{
+		padding:10px 0;
+		border-bottom: 1px solid #ddd;
+		text-align: left;
+		overflow: hidden;
+	}
+	#nav a{
+		float: left;
+		display: block;
+		margin:0 10px;
+		padding:5px 20px;
+		line-height: 24px;
+		font-size: 14px;
+		color:#666;
+		text-decoration: none;
+		border:1px solid #e1e1e1;
+	}
+	#nav a.active{
+		background-color: #f1f1f1;
+	}
+	#list li{
+		margin:10px;
+		padding:0 20px;
+		height: 30px;
+		line-height: 30px;
+		color:#fff;
+		background: orange;
+		list-style: none;
+		-webkit-user-select:none;
+		user-select:none;
+	}
+	#list li:nth-child(odd){
+		background: #399;
+	}
+	</style>
+</head>
+<body>
+<div id="header">
+	<h1>这里是头部</h1>
+</div>
+<div id="nav">
+	<a href="#!/appendLi">
+		导航1
+	</a>
+	<a href="#!/count">
+		导航2
+	</a>
+</div>
+<div id="main">
+	
+</div>
+<div id="footer">
+	<h3>这里是底部</h3>
+</div>
+<script id="li-tpl" type="text/html">
+<ul id="list">
+	{{each list as value i}}
+		<li>{{i+1}}---{{value}}</li>
+	{{/each}}
+</ul>
+</script>
+<script id="count-tpl" type="text/html">
+	<input type="text" class="input" value="0">
+	<input type="button" class="btn" value="增加">
+</script>
+<script src="vendor/jquery.min.js"></script>
+<script src="vendor/template.js"></script>
+<script src="vroute.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
